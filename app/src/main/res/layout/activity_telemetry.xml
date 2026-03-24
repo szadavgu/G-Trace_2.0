@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#121212"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/gForceLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CURRENT G-FORCE"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/gForceValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0.00 G"
+        android:textColor="#FF1801"
+        android:textSize="80sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/maxGLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SESSION MAX: 0.00 G"
+        android:textColor="#AAAAAA"
+        android:textSize="20sp"
+        android:layout_marginTop="30dp" />
+
+    <Button
+        android:id="@+id/btnStop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FINISH SESSION"
+        android:onClick="stopTelemetry"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="#FF1801" />
+
+</LinearLayout>

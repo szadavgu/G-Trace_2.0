@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="20dp"
+    android:background="#121212">
+
+    <TextView
+        android:id="@+id/mainTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="G-TRACE"
+        android:textSize="44sp"
+        android:textStyle="bold|italic"
+        android:textColor="#FF1801"
+        android:layout_marginBottom="50dp" />
+
+    <Button
+        android:id="@+id/btnLive"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:text="START LIVE TELEMETRY"
+        android:onClick="startLive"
+        android:layout_marginBottom="15dp"
+        android:backgroundTint="#FF1801"/>
+
+    <Button
+        android:id="@+id/btnFastest"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:text="DAILY FASTEST LAP"
+        android:onClick="showFastest"
+        android:layout_marginBottom="15dp"/>
+
+    <Button
+        android:id="@+id/btnHistory"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:text="HISTORY (TOP 10)"
+        android:onClick="showHistory" />
+
+</LinearLayout>
