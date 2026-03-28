@@ -23,4 +23,4 @@ A **G-Trace 2.0** egy professzionális szintű telemetriai alkalmazás, amely a 
 4. Tekintsd meg a napi rekordokat a **History** menüpontban.
 
 ## 👨‍💻 Szerző
-**szadavgu** - *Minden jog fenntartva*
+**Szalanics Dávid (UTSY4C)** - *Minden jog fenntartva*
