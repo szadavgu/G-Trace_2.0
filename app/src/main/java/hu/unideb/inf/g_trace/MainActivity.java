@@ -10,7 +10,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 public class MainActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-
     public void showFastest(View view) {
         SharedPreferences prefs = getSharedPreferences("GTracePrefs", MODE_PRIVATE);
         float fastest = prefs.getFloat("fastest_g", 0.0f);
@@ -30,32 +28,13 @@ public class MainActivity extends AppCompatActivity {
         if (fastest == 0) {
             Toast.makeText(this, "No record yet. Push the limits!", Toast.LENGTH_SHORT).show();
         } else {
-            String recordMessage = String.format("🏆 YOUR ALL-TIME RECORD: %.2f G", fastest);
+            String recordMessage = String.format("🏆 FASTEST OF TODAY: %.2f G", fastest);
             Toast.makeText(this, recordMessage, Toast.LENGTH_LONG).show();
         }
     }
 
-
     public void showHistory(View view) {
-        DatabaseHelper dbHelper = new DatabaseHelper(this);
-        SQLiteDatabase db = dbHelper.getReadableDatabase();
-
-        Cursor cursor = db.rawQuery("SELECT g_value FROM History ORDER BY g_value DESC LIMIT 10", null);
-
-        StringBuilder historyBuilder = new StringBuilder("--- TOP 10 RESULTS ---\n");
-        int rank = 1;
-
-        while (cursor.moveToNext()) {
-            float val = cursor.getFloat(0);
-            historyBuilder.append(rank).append(". ").append(String.format("%.2f G", val)).append("\n");
-            rank++;
-        }
-        cursor.close();
-
-        if (rank == 1) {
-            Toast.makeText(this, "No history yet. Go racing!", Toast.LENGTH_LONG).show();
-        } else {
-            Toast.makeText(this, historyBuilder.toString(), Toast.LENGTH_LONG).show();
-        }
+        Intent intent = new Intent(this, HistoryActivity.class);
+        startActivity(intent);
     }
 }

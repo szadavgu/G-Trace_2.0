@@ -38,7 +38,7 @@
         android:id="@+id/btnHistory"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:text="HISTORY (TOP 10)"
+        android:text="PADDOCK HISTORY"
         android:onClick="showHistory" />
 
 </LinearLayout>

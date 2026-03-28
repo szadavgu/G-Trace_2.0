@@ -4,6 +4,9 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String DB_NAME = "GTraceDB";
@@ -27,9 +30,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void addResult(float gValue) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
+
+        String currentDate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
+
         values.put("g_value", gValue);
-        values.put("date", "2026-03-24");
+        values.put("date", currentDate);
+
         db.insert("History", null, values);
+        db.close();
+    }
+
+    public void clearAllData() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DELETE FROM History");
         db.close();
     }
 }
